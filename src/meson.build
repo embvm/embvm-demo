@@ -3,7 +3,6 @@
 fwdemo_app = executable('fwdemo',
 	sources: ['main.cpp'],
 	dependencies: [
-		framework_native_dep,
 		fwdemo_sim_platform_dep
 	],
 	native: true
@@ -11,17 +10,16 @@ fwdemo_app = executable('fwdemo',
 
 # We want to build a demo app to test cross compilation on x86_64 with mainline clang
 
-if target_architecture == 'x86_64'
+if host_machine.cpu_family() == 'x86_64'
 	fwdemo_app_x86 = executable('fwdemo_x86',
 		sources: ['main.cpp'],
 		dependencies: [
-			framework_dep,
 			fwdemo_sim_x86_platform_dep
 		],
 	)
 endif
 
-if target_architecture == 'arm'
+if host_machine.cpu_family() == 'arm'
 
 	target_objcopy = find_program(meson.get_cross_property('objcopy'))
 
@@ -45,7 +43,6 @@ if target_architecture == 'arm'
 			'-Wl,-Map=nrf52_dk_fwdemo.map',
 		],
 		dependencies: [
-			framework_dep,
 			fwdemo_nrf52dk_platform_dep
 		],
 	)
@@ -70,4 +67,4 @@ endif
 # Next we will declare a non-native app for an embedded target, which is built
 # using the fwdemo_app_dep and the appropriate fwdemo platform
 
-framework_lint_files += files('main.cpp')
+clangtidy_files += files('main.cpp')

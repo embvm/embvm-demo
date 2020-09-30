@@ -1,4 +1,4 @@
-project('PROJECT_NAME',
+project('embvm-demo',
 	['c', 'cpp'],
 	default_options : [
 		'warning_level=3',
@@ -88,11 +88,13 @@ subdir('build/objcopy')
 # Subprojects #
 ###############
 
-libmemory_subproject = subproject('libmemory')
-etl_subproject = subproject('etl')
+embvm_demo_platforms_subproject = subproject('embvm-demo-platforms')
+fwdemo_sim_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_sim_platform_dep')
+fwdemo_sim_x86_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_sim_x86_platform_dep')
 
-libmemory_freelist_dep = libmemory_subproject.get_variable('libmemory_freelist_dep')
-etl_dep = etl_subproject.get_variable('etl_dep')
+if host_machine.cpu_family() == 'arm'
+fwdemo_nrf52dk_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_nrf52dk_platform_dep')
+endif
 
 # Configure the project to include `libc` headers by default
 #######################
