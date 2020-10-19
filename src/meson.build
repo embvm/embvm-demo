@@ -31,6 +31,10 @@ if host_machine.cpu_family() == 'arm'
 		sources: [
 			'main.cpp',
 		],
+		# TODO: these need to be in the platform really...
+		# Also need to structure the build so that's a choice that can be made, since it's in the startup files.
+		# Maybe these need to be linker-script values rather than macros?
+		# Is there another dependency in the startup code that impacts this?
 		c_args: [
 			'-D__HEAP_SIZE=8192',
 			'-D__STACK_SIZE=8192',
