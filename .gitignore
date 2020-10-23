@@ -5,8 +5,33 @@
 *.sublime-workspace
 
 # Meson subprojects
-**/subprojects/**
-!**/subprojects/*.wrap
+subprojects/**
+!subprojects/*.wrap
+!subprojects/packagefiles/
+!subprojects/packagefiles/*.tgz
+!subprojects/packagefiles/*.zip
+!subprojects/packagefiles/**/
+!subprojects/packagefiles/**/meson.build
+
+###############################
+# Ignore Forwarded Wrap Files #
+###############################
+subprojects/aardvark.wrap
+subprojects/arm-architecture.wrap
+subprojects/cmsis-5.wrap
+subprojects/compiler-rt.wrap
+subprojects/embvm-core.wrap
+subprojects/etl.wrap
+subprojects/freertos-interface.wrap
+subprojects/freertos-kernel.wrap
+subprojects/libc.wrap
+subprojects/libcpp.wrap
+subprojects/libmemory.wrap
+subprojects/gsl-lite.wrap
+subprojects/nordic.wrap
+subprojects/nrfx.wrap
+subprojects/st-vl53l1x.wrap
+subprojects/two-tone-oled.wrap
 
 ########################
 # C / C++ Ignore Rules #
