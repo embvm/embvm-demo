@@ -24,8 +24,6 @@ subprojects/embvm-core.wrap
 subprojects/etl.wrap
 subprojects/freertos-interface.wrap
 subprojects/freertos-kernel.wrap
-subprojects/libc.wrap
-subprojects/libcpp.wrap
 subprojects/libmemory.wrap
 subprojects/gsl-lite.wrap
 subprojects/nordic.wrap
