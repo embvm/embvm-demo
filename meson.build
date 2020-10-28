@@ -92,7 +92,9 @@ subdir('build/objcopy')
 
 embvm_demo_platforms_subproject = subproject('embvm-demo-platforms')
 fwdemo_sim_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_sim_platform_dep')
+if host_machine.cpu_family() == 'x86_64'
 fwdemo_sim_x86_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_sim_x86_platform_dep')
+endif
 
 if host_machine.cpu_family() == 'arm'
 fwdemo_nrf52dk_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_nrf52dk_platform_dep')
