@@ -223,9 +223,9 @@ If you are interested in contributing to this project, please read our [contribu
 
 Copyright © 2020 Embedded Artistry LLC
 
-This project is released under GPLv3. See the [LICENSE](LICENSE) file for further licensing details.
+This project is released under GPLv3 according to the requirements of the `embvm-core` project. See the [LICENSE.md](LICENSE.md) file for further licensing details.
 
-See the [LICENSE](LICENSE) file for further licensing details.
+See the [LICENSE.md](LICENSE.md) file for further licensing details.
 
 **[Back to top](#table-of-contents)**
 
