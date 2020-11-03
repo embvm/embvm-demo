@@ -20,7 +20,6 @@ subprojects/aardvark.wrap
 subprojects/arm-architecture.wrap
 subprojects/cmsis-5.wrap
 subprojects/compiler-rt.wrap
-subprojects/embvm-core.wrap
 subprojects/etl.wrap
 subprojects/freertos-interface.wrap
 subprojects/freertos-kernel.wrap
@@ -30,6 +29,7 @@ subprojects/nordic.wrap
 subprojects/nrfx.wrap
 subprojects/st-vl53l1x.wrap
 subprojects/two-tone-oled.wrap
+subprojects/STM32CubeL4.wrap
 
 ########################
 # C / C++ Ignore Rules #
