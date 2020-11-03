@@ -39,10 +39,16 @@ int main()
 	auto tof = platform.findDriver<embvm::tof::sensor>();
 	assert(tof);
 
+	// TODO: put this on a timer, instead of a thread? Make a platform delay function?
 	while(!abort_program_)
 	{
 		tof.value().read();
+#ifdef ENABLE_STM32L4_WORKAROUND
+		for(int i = 0; i < 100000; i++)
+			;
+#else
 		std::this_thread::sleep_for(DEFAULT_TOF_READ_DELAY);
+#endif
 	}
 
 	printf("Exiting demo application. Log contents:\n");
