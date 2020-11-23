@@ -103,10 +103,11 @@ endif
 if host_machine.cpu_family() == 'arm'
 if get_option('enable-threading') == true
 fwdemo_nrf52dk_platform_dep = embvm_demo_platforms_subproject.get_variable('fwdemo_nrf52dk_platform_dep')
+nucleo_l4r5zi_fwdemo_platform_dep = disabler()
 else
 fwdemo_nrf52dk_platform_dep = disabler()
-endif
 nucleo_l4r5zi_fwdemo_platform_dep = embvm_demo_platforms_subproject.get_variable('nucleo_l4r5zi_fwdemo_platform_dep')
+endif
 endif
 
 # Configure the project to include `libc` headers by default
