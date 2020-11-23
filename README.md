@@ -1,6 +1,8 @@
 # Embedded Virtual Machine Demo Application
 
-This repository contains the definition for the Embedded VM demo application. This program interacts with a time-of-flight sensor and an OLED display. It currently runs on an nRF52840 Development Kit and a host machine using an Aardvark adapter.
+This repository contains the definition for the Embedded VM demo application. This program interacts with a time-of-flight sensor and an OLED display. It currently runs on an nRF52840 Development Kit, an STM32L4 Nucleo board, and a host machine using an Aardvark adapter.
+
+Currently, the nRF52 DK example is only enabled when the `enable-threading` option is set to `true`. The STM32L4 example is only enabled when the `enable-threading` option is set to `false`.
 
 ## Table of Contents
 
