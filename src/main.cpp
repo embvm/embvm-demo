@@ -46,8 +46,8 @@ int main()
 		logdebug("Performing I2C Sweep\n");
 		embvm::i2c::master::sweep_list_t found_list;
 		// Note that we register a lambda function as a callback for sweep()
-		i2c.value().sweep(found_list, [&]() {
-			logdebug("Sweep found %d devices\n", found_list.size());
+		i2c.value()->sweep(found_list, [&]() {
+			logdebug("Sweep found %zu devices\n", found_list.size());
 
 			for(const auto& t : found_list)
 			{
@@ -70,7 +70,7 @@ int main()
 		// Trigger a sensor read
 		// Note that no action is taken here - specific responses to this
 		// read are handled via callbacks
-		tof.value().read();
+		tof.value()->read();
 
 		// Workaround is in place because our STM32L4 module
 		// does not support FreeRTOS yet.
@@ -84,7 +84,7 @@ int main()
 
 	printf("Exiting demo application. Log contents:\n");
 
-	// If a _putchar() function is defined, this will dump the contents of the buffer to the
+	// If a putchar_() function is defined, this will dump the contents of the buffer to the
 	// associated communication channel.
 	// Note that this is a platform API, not a standard logging API.
 	platform.echoLogBufferToConsole();
