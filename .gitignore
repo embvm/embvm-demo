@@ -34,6 +34,7 @@ subprojects/STM32CubeL4.wrap
 subprojects/stm32l4.wrap
 subprojects/stm32l4xx_hal_driver.wrap
 subprojects/two-tone-oled.wrap
+subprojects/c-linked-list.wrap
 
 ########################
 # C / C++ Ignore Rules #
